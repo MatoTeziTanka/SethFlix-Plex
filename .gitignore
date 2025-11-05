@@ -52,6 +52,16 @@ secrets.yaml
 .env.local
 .env.*.local
 
+# Private configuration files (NEVER commit these)
+PRIVATE_CONFIG.md
+PRIVATE_NOTES.md
+INFRASTRUCTURE_PRIVATE.md
+MY_NETWORK.md
+*_PRIVATE.*
+*_SENSITIVE.*
+credentials.txt
+passwords.txt
+
 # Scripts output
 *.pid
 *.seed

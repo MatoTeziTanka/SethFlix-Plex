@@ -1,0 +1,95 @@
+# GitHub Repository Topics
+
+These topics are correctly formatted for GitHub (lowercase, 50 chars or less, hyphens allowed).
+
+Copy and paste these into your GitHub repository settings:
+
+## Recommended Topics:
+
+plex
+proxmox
+self-hosted
+media-server
+home-lab
+homelab
+zfs
+dell-poweredge
+infrastructure
+virtualization
+plex-media-server
+streaming
+nas
+storage
+documentation
+r730
+server
+enterprise
+datacenter
+proxmox-ve
+zfs-storage
+media-streaming
+selfhosted
+homelabbing
+linux
+
+---
+
+## How to Add Topics:
+
+1. Go to: https://github.com/MatoTeziTanka/SethFlix-Plex
+2. Click the ⚙️ gear icon next to "About" section
+3. In the "Topics" field, add each topic (GitHub will suggest as you type)
+4. Add up to 20 topics maximum
+5. Click "Save changes"
+
+---
+
+## Topic Categories:
+
+### Core Technologies:
+- plex
+- proxmox
+- zfs
+- virtualization
+- proxmox-ve
+- zfs-storage
+
+### Use Case:
+- media-server
+- streaming
+- nas
+- storage
+- media-streaming
+- plex-media-server
+
+### Community:
+- self-hosted
+- selfhosted
+- home-lab
+- homelab
+- homelabbing
+
+### Hardware:
+- dell-poweredge
+- r730
+- server
+- enterprise
+- datacenter
+
+### General:
+- infrastructure
+- documentation
+- linux
+
+---
+
+## Note on Topic Rules:
+
+✅ Lowercase only
+✅ 50 characters or less
+✅ Can include hyphens
+✅ Must start with letter or number
+❌ No spaces
+❌ No special characters except hyphens
+❌ No uppercase letters
+

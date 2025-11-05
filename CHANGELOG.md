@@ -73,9 +73,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plex Media Server (planned)
 
 #### Network
-- Network segment: 192.168.12.0/24
-- Proxmox host: 192.168.12.70
-- Gateway: 192.168.12.1
+- Network segment: Example 192.168.1.0/24 (configure for your setup)
+- Proxmox host: Configure static IP
+- Gateway: Your router IP
 - Cloudflare integration for CDN and DDoS protection
 
 ### Known Issues

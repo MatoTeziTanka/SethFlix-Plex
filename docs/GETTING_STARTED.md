@@ -69,9 +69,9 @@ The SethFlix infrastructure is built on three main layers:
 ### Phase 2: Network Configuration
 
 1. **Plan your IP scheme**
-   - Choose a private subnet (e.g., 192.168.x.0/24)
-   - Reserve IPs for VMs
-   - Document your network layout
+   - Choose a private subnet (e.g., 192.168.1.0/24 or 10.0.0.0/24)
+   - Reserve IPs for VMs (avoid DHCP range)
+   - Document your network layout in a private file
 
 2. **Configure Proxmox networking**
    - Set up bridge interface

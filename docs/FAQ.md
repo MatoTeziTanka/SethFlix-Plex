@@ -354,7 +354,7 @@ Popular tools:
 2. Is Plex service running? `systemctl status plexmediaserver`
 3. Network connectivity from client device
 4. Firewall rules blocking Plex ports
-5. Try local IP: `http://192.168.12.x:32400/web`
+5. Try local IP: `http://YOUR_PLEX_IP:32400/web`
 
 ### Media not showing up in Plex
 

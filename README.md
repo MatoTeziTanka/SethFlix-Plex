@@ -73,20 +73,21 @@ SethFlix is a self-hosted media streaming platform built on enterprise-grade har
 
 ### IP Addressing Scheme
 
-**Network Segment:** 192.168.12.0/24
+**Network Segment:** 192.168.1.0/24 (example - configure for your network)
 
 | Host | IP Address | Purpose |
 |------|------------|---------|
-| Proxmox Host | 192.168.12.70 | Hypervisor management |
-| WordPress VM | 192.168.12.150 | LightSpeedUp website |
-| Management VM | 192.168.12.70:2222 | Infrastructure management (VM101) |
-| Plex Media Server | TBD | SethFlix streaming |
+| Proxmox Host | 192.168.1.10 | Hypervisor management |
+| Plex Media Server | 192.168.1.20 | SethFlix streaming |
+| Additional VMs | 192.168.1.x | Other services as needed |
+
+> **Note:** These are example IPs. Configure according to your network setup.
 
 ### Network Features
-- **Gateway:** 192.168.12.1
-- **Bandwidth:** 10GbE capable
+- **Gateway:** 192.168.1.1 (your router IP)
+- **Bandwidth:** 1GbE minimum, 10GbE recommended
 - **External Access:** Cloudflare for CDN and DDoS protection
-- **VPN:** Planned for secure remote access
+- **VPN:** Recommended for secure remote access
 
 ---
 
@@ -95,9 +96,7 @@ SethFlix is a self-hosted media streaming platform built on enterprise-grade har
 ### ZFS Pool Strategy
 
 #### Storage_HDD (Plex Media Storage)
-- **Total Capacity:** 36.4TB
-- **Current Usage:** 23.9TB (65% full)
-- **Free Space:** 12.5TB
+- **Capacity:** Variable (sized for your media collection)
 - **Health:** ONLINE
 - **Purpose:** Primary Plex media library storage
 - **Features:**
@@ -107,12 +106,10 @@ SethFlix is a self-hosted media streaming platform built on enterprise-grade har
   - Compression enabled
 
 #### Storage_SSD (High-Performance Storage)
-- **Total Capacity:** 14.0TB
-- **Current Usage:** 279GB (1% full)
-- **Free Space:** 13.7TB
+- **Capacity:** Variable (4TB+ recommended for OS and cache)
 - **Health:** ONLINE
 - **Purpose:** OS, databases, transcoding cache
-- **Configuration:** RAIDZ2 (double parity)
+- **Configuration:** RAIDZ2 (double parity) recommended
 
 ### Dataset Structure
 
@@ -138,27 +135,21 @@ Storage_HDD/
 
 ### Proxmox Virtual Environment
 
-**Version:** Proxmox VE 8.x  
-**Kernel:** 6.8.12-15-pve  
-**Management Interface:** https://192.168.12.70:8006
+**Version:** Proxmox VE 8.x (or latest stable)
+**Management Interface:** https://YOUR_PROXMOX_IP:8006
 
-### Current VMs
+### Example VM Configuration
 
-| VMID | Name | Status | RAM | Storage | Purpose |
-|------|------|--------|-----|---------|---------|
-| 100 | Dev-AI-Server-2025 | Running | 32GB | Storage_SSD | Development |
-| 101 | Management-AI-Assistant-1 | Running | 64GB | Storage_SSD | Infrastructure management |
-| 120 | Reverse-Proxy-Gateway | Running | 6GB | Storage_SSD | Nginx reverse proxy |
-| 150 | WordPress-Hosting-1 | Running | 32GB | Storage_SSD | LightSpeedUp.com |
-| 160 | Database-Services-1 | Stopped | 32GB | Storage_SSD | MySQL/PostgreSQL |
-| 170 | Game-Server-Hosting-1 | Stopped | 48GB | Storage_SSD | Game hosting |
-| 180 | API-Services-1 | Stopped | 24GB | Storage_SSD | API backend |
-| 192 | Personal | Stopped | 24GB | Storage_SSD | Personal use |
-| 200 | **SethFlix-Media-Server-2025** | Stopped | 96GB | Storage_HDD | **Plex Media Server** |
-| 201 | StreamForge-Development-2025 | Stopped | 64GB | Storage_SSD | Streaming development |
-| 300 | win-2025 | Stopped | 64GB | Storage_SSD | Windows Server |
+This infrastructure supports multiple VMs. Here's an example Plex VM configuration:
 
-### SethFlix VM Specifications (VM200)
+| VMID | Name | RAM | Storage | Purpose |
+|------|------|-----|---------|---------|
+| 100 | Plex-Media-Server | 96GB | Storage_HDD | **Plex Media Server** |
+| 101+ | Additional-Services | Variable | Variable | Other services as needed |
+
+> **Note:** Actual VM IDs, names, and quantities will vary based on your infrastructure needs.
+
+### Plex VM Specifications (Example)
 
 **Operating System:** Ubuntu 24.04 LTS (planned)  
 **RAM:** 96GB  
@@ -169,9 +160,9 @@ Storage_HDD/
 - **Transcoding Cache:** 200GB on Storage_SSD
 
 **Network:**
-- **IP:** TBD (192.168.12.x)
+- **IP:** Assign static IP from your network (e.g., 192.168.1.20)
 - **Bridge:** vmbr0 (bridged to physical network)
-- **Bandwidth:** 10GbE
+- **Bandwidth:** 1GbE minimum, 10GbE recommended
 
 ---
 
@@ -491,13 +482,13 @@ zfs destroy Storage_HDD/SethFlix@[snapshot-name]
 ```bash
 # Check VM status
 qm list
-qm status 200
+qm status [VMID]
 
 # View VM logs
-tail -f /var/log/pve/qemu-server/200.log
+tail -f /var/log/pve/qemu-server/[VMID].log
 
 # Start VM manually
-qm start 200
+qm start [VMID]
 ```
 
 #### Plex Issues
@@ -573,13 +564,13 @@ zpool status -v
 ```bash
 # VM management
 qm list
-qm start 200
-qm stop 200
-qm status 200
+qm start [VMID]
+qm stop [VMID]
+qm status [VMID]
 
 # Storage management
 pvesm status
-pvesm list Storage_HDD
+pvesm list [STORAGE_NAME]
 
 # System info
 pveversion
