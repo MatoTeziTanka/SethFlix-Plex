@@ -1,0 +1,15 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 General Questions & Discussions
+    url: https://github.com/MatoTeziTanka/SethFlix-Plex/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 🔒 Security Vulnerability
+    url: mailto:support@lightspeedup.com
+    about: Report security vulnerabilities privately via email
+  - name: 🌐 LightSpeedUp Website
+    url: https://lightspeedup.com
+    about: Visit our company website for hosting services
+  - name: 📧 Direct Support
+    url: mailto:support@lightspeedup.com
+    about: Contact us directly for private inquiries
+
