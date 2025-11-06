@@ -38,6 +38,12 @@ This documentation is organized to help different audiences:
   - Hardware recommendations
   - Software choices
   - Troubleshooting common issues
+- **[REMOTE_ACCESS_SETUP.md](REMOTE_ACCESS_SETUP.md)** - Production remote access configuration
+  - Cloudflare Tunnel setup
+  - Nginx reverse proxy configuration
+  - Plex network security settings
+  - Zero-port-forwarding architecture
+  - Performance optimization
 
 ### Project Governance
 - **[CONTRIBUTING.md](../CONTRIBUTING.md)** - How to contribute
@@ -68,7 +74,8 @@ This documentation is organized to help different audiences:
 ### Security
 - [Security Best Practices](../SECURITY.md#security-best-practices)
 - [Firewall Configuration](../README.md#security-considerations)
-- [Remote Access](FAQ.md#can-i-access-my-plex-remotely)
+- [Remote Access Configuration](REMOTE_ACCESS_SETUP.md)
+- [Cloudflare Security](REMOTE_ACCESS_SETUP.md#security-considerations)
 
 ### Troubleshooting
 - [FAQ Troubleshooting Section](FAQ.md#troubleshooting)
@@ -143,9 +150,10 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for details on how to contribute.
 - ✅ Contributing guidelines
 - ✅ Security policies
 
-### Version 1.1 (Planned)
+### Version 1.1 (Current - November 6, 2025)
+- ✅ Remote access setup documentation (Cloudflare Tunnel)
+- ✅ Production architecture documentation
 - [ ] Video tutorials
-- [ ] More detailed setup guides
 - [ ] Automation documentation
 - [ ] Advanced configurations
 - [ ] Case studies
@@ -180,6 +188,7 @@ SethFlix-Plex/
 ├── CODE_OF_CONDUCT.md        # Community standards
 ├── SECURITY.md               # Security policies
 ├── CHANGELOG.md              # Version history
+├── PRIVATE_CONFIG_TEMPLATE.md # Template for private configs
 ├── .gitignore                # Git ignore rules
 ├── .github/
 │   ├── ISSUE_TEMPLATE/       # Issue templates
@@ -191,6 +200,7 @@ SethFlix-Plex/
 └── docs/
     ├── README.md             # This file
     ├── GETTING_STARTED.md    # Beginner's guide
+    ├── REMOTE_ACCESS_SETUP.md # Cloudflare tunnel & reverse proxy
     └── FAQ.md                # Frequently asked questions
 ```
 
@@ -199,4 +209,7 @@ SethFlix-Plex/
 **Happy reading and building!** 📚🚀
 
 *Last updated: November 4, 2025*
+
+
+
 

@@ -8,12 +8,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
-- Complete Plex VM setup and configuration
 - Implement automated backup solution
-- Set up remote access via Cloudflare
 - Configure hardware transcoding
 - Monitoring dashboard implementation
 - Automated media organization (Sonarr/Radarr)
+
+---
+
+## [1.1.0] - 2025-11-06
+
+### Added
+- **Comprehensive Remote Access Setup Documentation** (`docs/REMOTE_ACCESS_SETUP.md`)
+  - Cloudflare Tunnel configuration with full technical details
+  - Nginx reverse proxy setup on VM120 (Reverse Proxy Gateway)
+  - Plex network security configuration and IP whitelisting
+  - Production architecture diagrams and network flow documentation
+  - Detailed troubleshooting guide for remote access issues
+  - Security best practices and hardening recommendations
+  - Performance optimization guidelines for streaming
+
+### Changed
+- Updated README.md with link to detailed remote access documentation
+- Enhanced network architecture section with Cloudflare tunnel architecture
+- Updated security posture to zero-exposed-ports infrastructure
+
+### Completed
+- ✅ Plex VM setup and configuration (VM200 on Windows Server 2025 Datacenter)
+- ✅ Remote access via Cloudflare Tunnel successfully implemented
+- ✅ Production domain: https://plex.lightspeedup.com (live and operational)
+
+### Technical Details
+- **VM120:** Ubuntu-based reverse proxy with nginx and cloudflared
+- **VM200:** Windows Server 2025 Datacenter with Plex Media Server 1.42.2
+- **Cloudflare DNS:** CNAME records configured for tunnel routing
+- **Plex Network:** Cloudflare IP ranges whitelisted, custom URL configured
+- **Security:** Zero port forwarding, SSL/TLS at edge, DDoS protection active
 
 ---
 

@@ -86,8 +86,11 @@ SethFlix is a self-hosted media streaming platform built on enterprise-grade har
 ### Network Features
 - **Gateway:** 192.168.1.1 (your router IP)
 - **Bandwidth:** 1GbE minimum, 10GbE recommended
-- **External Access:** Cloudflare for CDN and DDoS protection
-- **VPN:** Recommended for secure remote access
+- **External Access:** Cloudflare Tunnel with Nginx reverse proxy
+- **Security:** DDoS protection, SSL/TLS termination at edge
+- **Remote Access:** Custom domain with zero exposed ports
+
+> 📚 **Detailed Setup Guide:** See [Remote Access Setup Documentation](docs/REMOTE_ACCESS_SETUP.md)
 
 ---
 
