@@ -3,7 +3,7 @@
 **Project:** SethFlix Media Server  
 **Repository:** https://github.com/MatoTeziTanka/SethFlix-Plex  
 **License:** Apache-2.0  
-**Last Updated:** November 4, 2025
+**Last Updated:** November 6, 2025
 
 ---
 
@@ -131,6 +131,16 @@ Storage_HDD/
 2. **Scrubbing:** Monthly data integrity checks
 3. **Monitoring:** Real-time pool health monitoring
 4. **Capacity Planning:** Maintain 20% free space for optimal performance
+
+### Network Storage Access
+
+The Plex VM accesses media storage via SMB/CIFS network shares from the Proxmox host:
+- **Protocol:** SMB2/3 (secure, high-performance)
+- **Mount Point:** P: drive (Windows) or /mnt/media (Linux)
+- **Auto-mount:** Configured to persist across reboots
+- **Capacity:** Direct access to ZFS pools without consuming VM disk space
+
+> 📚 **Detailed Setup Guide:** See [Network Storage Setup Documentation](docs/STORAGE_NETWORK_SETUP.md)
 
 ---
 
@@ -635,7 +645,7 @@ This project is licensed under the Apache License 2.0. See the LICENSE file for 
 ---
 
 **Document Version:** 1.0  
-**Last Updated:** November 4, 2025  
+**Last Updated:** November 6, 2025  
 **Status:** Active Development  
 **Next Review:** December 2025
 

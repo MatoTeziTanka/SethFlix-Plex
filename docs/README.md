@@ -44,6 +44,12 @@ This documentation is organized to help different audiences:
   - Plex network security settings
   - Zero-port-forwarding architecture
   - Performance optimization
+- **[STORAGE_NETWORK_SETUP.md](STORAGE_NETWORK_SETUP.md)** - Network storage configuration
+  - SMB/CIFS share setup on Proxmox
+  - Windows Server 2025 client configuration
+  - Auto-mount on boot configuration
+  - Performance tuning and optimization
+  - Security hardening and best practices
 
 ### Project Governance
 - **[CONTRIBUTING.md](../CONTRIBUTING.md)** - How to contribute
@@ -63,6 +69,8 @@ This documentation is organized to help different audiences:
 - [Why ZFS?](FAQ.md#why-zfs-for-storage)
 - [Storage Requirements](FAQ.md#how-much-storage-do-i-need)
 - [ZFS Configuration](../README.md#storage-architecture)
+- [Network Storage Setup](STORAGE_NETWORK_SETUP.md)
+- [SMB/CIFS Configuration](STORAGE_NETWORK_SETUP.md#proxmox-host-smb-configuration)
 - [Backup Strategy](../README.md#backup-strategy)
 
 ### Plex Setup
@@ -201,6 +209,7 @@ SethFlix-Plex/
     ├── README.md             # This file
     ├── GETTING_STARTED.md    # Beginner's guide
     ├── REMOTE_ACCESS_SETUP.md # Cloudflare tunnel & reverse proxy
+    ├── STORAGE_NETWORK_SETUP.md # SMB/CIFS network storage
     └── FAQ.md                # Frequently asked questions
 ```
 
@@ -208,7 +217,7 @@ SethFlix-Plex/
 
 **Happy reading and building!** 📚🚀
 
-*Last updated: November 4, 2025*
+*Last updated: November 6, 2025*
 
 
 

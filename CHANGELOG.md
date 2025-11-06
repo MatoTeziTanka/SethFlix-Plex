@@ -26,16 +26,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Detailed troubleshooting guide for remote access issues
   - Security best practices and hardening recommendations
   - Performance optimization guidelines for streaming
+- **Network Storage Configuration Documentation** (`docs/STORAGE_NETWORK_SETUP.md`)
+  - Complete SMB/CIFS setup guide for Proxmox host
+  - Windows Server 2025 client configuration and security policies
+  - Persistent network drive mapping (P: drive → ZFS storage)
+  - Auto-mount on boot configuration with startup scripts
+  - Comprehensive troubleshooting for 7 common SMB issues
+  - Performance tuning for 10GbE network storage
+  - Security hardening and encryption options
 
 ### Changed
 - Updated README.md with link to detailed remote access documentation
 - Enhanced network architecture section with Cloudflare tunnel architecture
 - Updated security posture to zero-exposed-ports infrastructure
+- Updated docs/README.md to reference new storage network setup guide
+- Enhanced documentation structure with SMB/CIFS configuration references
 
 ### Completed
 - ✅ Plex VM setup and configuration (VM200 on Windows Server 2025 Datacenter)
 - ✅ Remote access via Cloudflare Tunnel successfully implemented
 - ✅ Production domain: https://plex.lightspeedup.com (live and operational)
+- ✅ Network storage configured and mounted (18TB ZFS pool accessible via SMB)
+- ✅ Auto-mount on boot configured with startup scripts
+- ✅ P: drive persistent mapping verified and tested
 
 ### Technical Details
 - **VM120:** Ubuntu-based reverse proxy with nginx and cloudflared
@@ -43,6 +56,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Cloudflare DNS:** CNAME records configured for tunnel routing
 - **Plex Network:** Cloudflare IP ranges whitelisted, custom URL configured
 - **Security:** Zero port forwarding, SSL/TLS at edge, DDoS protection active
+- **Storage:** Proxmox SMB/CIFS share (SharedFolder) serving /Storage_HDD/shared
+- **Capacity:** 18TB total (12TB used, 6TB free) - ZFS pool with LZ4 compression
+- **Network Drive:** P: → \\192.168.12.70\SharedFolder (persistent, auto-mount enabled)
+- **Performance:** 10GbE network with jumbo frames support, optimized for media streaming
 
 ---
 
@@ -159,5 +176,5 @@ Warwick, RI
 ---
 
 *Keep a Changelog format used to maintain consistency and readability*  
-*Last Updated: November 4, 2025*
+*Last Updated: November 6, 2025*
 
